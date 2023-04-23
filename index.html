@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- <link rel="canonical" href="https://escaperoom.akshatvg.com"> -->
+
+    <!-- Linking Favicon, Apple Touch Icon, Font Awesome, AOS, Materialize & CSS -->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        defer>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/spacing.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- Title -->
+    <title>Escape Room</title>
+
+    <!-- No Script -->
+    <noscript>Please enable JavaScript to open this page.</noscript>
+
+</head>
+
+<!-- Home Page -->
+
+<body id="body">
+    <div>
+        <button id="btn">Logout</button> 
+    </div>
+    
+    <div id="time">
+        
+    </div>
+
+    <!-- Audio -->
+    <audio autoplay id="autoPlayMusic">
+        <source src="assets/audio/horror.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Welcome -->
+    <div class="container">
+        <div class="row center center-align">
+            <h1 class="overlay-text center animated bounce">Welcome to <i>Quiz</i> !</h1>
+        </div>
+        <div class="overlay-text animated bounce">
+            <div class="row center">
+                <!-- Heading -->
+                <h2 class="center heading-underline">How do you win your gift?</h2>
+            </div>
+            <!-- Content -->
+            <div class="row center">
+                <h5>I have made 10 clues of different types. You will either have to solve what you are given or
+                    find
+                    hidden clues.</h5>
+            </div>
+            <!-- Button -->
+            <div class="row center">
+                <button class="btn btn-mystery waves-effect waves-light" id="startJourney">Start Journey</button>
+            </div>
+            <!-- Note -->
+            <div class="row center">
+                <h6 class="grey-text">P.S: This page doesn't have any clue. Just click the button above to get started.</h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#6590D5" /></svg></div>
+
+
+        
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+        crossorigin="anonymous"></script>
+    <script defer src="assets/js/index.js"></script>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCHWM1pv901bKL4HXgG4HG_zhOvkWXbTJU",
+        authDomain: "demo1-64cf6.firebaseapp.com",
+        projectId: "demo1-64cf6",
+        storageBucket: "demo1-64cf6.appspot.com",
+    messagingSenderId: "924205599193",
+    appId: "1:924205599193:web:29524c2b8ef841abd9b1c8",
+    measurementId: "G-14J1FFNLN0"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+
+let btn = document.getElementById("btn")
+btn.addEventListener("click",(e)=>{
+    e.preventDefault()
+    signOut(auth).then(()=>{
+        alert("signout success");
+        btn.style.display = 'none';
+        window.location.replace("./login.html")
+    }).catch((error)=>{
+        alert("Logout unsucessful try agian")
+    })
+}) 
+    </script>
+
+</body>
+
+</html>
