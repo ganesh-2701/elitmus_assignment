@@ -31,9 +31,6 @@ $("#submitAnswer").click(function () {
     }
 });
 
-// Play Music
-body.addEventListener('click', function () {
-    $("#autoPlayMusic")[0].play();
-});
+
 
 console.clear();

@@ -19,10 +19,7 @@
 
 })(jQuery);
 
-// Play Music
-body.addEventListener('click', function () {
-    $("#autoPlayMusic")[0].play();
-});
+
 
 // Submit Answer
 $("#submitAnswer").click(function () {

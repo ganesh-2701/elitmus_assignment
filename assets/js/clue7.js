@@ -19,23 +19,9 @@
 
 })(jQuery);
 
-// Play Music
-body.addEventListener('click', function () {
-    $("#autoPlayMusic")[0].play();
-});
 
-// Submit Answer
-// $("#submitAnswer").click(function () {
-//     var nameTrivia = document.getElementById("nameTrivia").value;
-//     var result = nameTrivia.toString().toLowerCase();
-//     var finalResult = result.includes("2005");
-//     if (finalResult == true) {
-//         window.location.href = "https://rastogi.codes";
-//     }
-//     else {
-//         document.getElementById("errorHandler").innerHTML = "Wrong Answer. Please Try again.";
-//     }
-// });
+
+
 
 let sub_btn = document.getElementById("submitAnswer")
 
