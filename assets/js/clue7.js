@@ -39,8 +39,11 @@ body.addEventListener('click', function () {
 
 let sub_btn = document.getElementById("submitAnswer")
 
+// submitAnswer
 
-
+sub_btn.addEventListener("click",()=>{
+    window.location.replace("./lastpage.html")
+})
 
 
 
